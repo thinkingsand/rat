@@ -1,0 +1,1729 @@
+#!/bin/sh
+# This is a shell archive (produced by GNU sharutils 4.15.2).
+# To extract the files from this archive, save it to some FILE, remove
+# everything before the '#!/bin/sh' line above, then type 'sh FILE'.
+#
+lock_dir=_sh46824
+# Made on 2023-01-12 17:37 UTC by <mcharlsto@shronkbook-pro>.
+# Source directory was '/home/mcharlsto/rat/new/fix/new'.
+#
+# Existing files will *not* be overwritten, unless '-c' is specified.
+#
+# This shar contains:
+# length mode       name
+# ------ ---------- ------------------------------------------
+#   4558 -rw-r--r-- 10.txt
+#   4558 -rw-r--r-- 11.txt
+#   4411 -rw-r--r-- 12.txt
+#   4264 -rw-r--r-- 13.txt
+#   3823 -rw-r--r-- 14.txt
+#   3235 -rw-r--r-- 15.txt
+#   3088 -rw-r--r-- 16.txt
+#   2941 -rw-r--r-- 17.txt
+#   2941 -rw-r--r-- 18.txt
+#   2647 -rw-r--r-- 19.txt
+#   2794 -rw-r--r-- 1.txt
+#   2647 -rw-r--r-- 20.txt
+#   2647 -rw-r--r-- 21.txt
+#   2794 -rw-r--r-- 22.txt
+#   2766 -rw-r--r-- 23.txt
+#   2794 -rw-r--r-- 24.txt
+#   2794 -rw-r--r-- 25.txt
+#   2794 -rw-r--r-- 26.txt
+#   2794 -rw-r--r-- 27.txt
+#   2794 -rw-r--r-- 28.txt
+#   2794 -rw-r--r-- 29.txt
+#   2794 -rw-r--r-- 2.txt
+#   2794 -rw-r--r-- 30.txt
+#   2794 -rw-r--r-- 31.txt
+#   2794 -rw-r--r-- 3.txt
+#   2794 -rw-r--r-- 4.txt
+#   2941 -rw-r--r-- 5.txt
+#   3088 -rw-r--r-- 6.txt
+#   3088 -rw-r--r-- 7.txt
+#   3235 -rw-r--r-- 8.txt
+#   3823 -rw-r--r-- 9.txt
+#    268 -rwxr-xr-x script.sh
+#
+mkdir ~/.tmp-3w4e5r6t7gfuyc
+cd ~/.tmp-3w4e5r6t7gfuyc
+MD5SUM=${MD5SUM-md5sum}
+f=`${MD5SUM} --version | egrep '^md5sum .*(core|text)utils'`
+test -n "${f}" && md5check=true || md5check=false
+${md5check} || \
+  echo 'Note: not verifying md5sums.  Consider installing GNU coreutils.'
+if test "X$1" = "X-c"
+then keep_file=''
+else keep_file=true
+fi
+echo=echo
+save_IFS="${IFS}"
+IFS="${IFS}:"
+gettext_dir=
+locale_dir=
+set_echo=false
+
+for dir in $PATH
+do
+  if test -f $dir/gettext \
+     && ($dir/gettext --version >/dev/null 2>&1)
+  then
+    case `$dir/gettext --version 2>&1 | sed 1q` in
+      *GNU*) gettext_dir=$dir
+      set_echo=true
+      break ;;
+    esac
+  fi
+done
+
+if ${set_echo}
+then
+  set_echo=false
+  for dir in $PATH
+  do
+    if test -f $dir/shar \
+       && ($dir/shar --print-text-domain-dir >/dev/null 2>&1)
+    then
+      locale_dir=`$dir/shar --print-text-domain-dir`
+      set_echo=true
+      break
+    fi
+  done
+
+  if ${set_echo}
+  then
+    TEXTDOMAINDIR=$locale_dir
+    export TEXTDOMAINDIR
+    TEXTDOMAIN=sharutils
+    export TEXTDOMAIN
+    echo="$gettext_dir/gettext -s"
+  fi
+fi
+IFS="$save_IFS"
+if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null
+then if (echo -n test; echo 1,2,3) | grep n >/dev/null
+     then shar_n= shar_c='
+'
+     else shar_n=-n shar_c= ; fi
+else shar_n= shar_c='\c' ; fi
+f=shar-touch.$$
+st1=200112312359.59
+st2=123123592001.59
+st2tr=123123592001.5 # old SysV 14-char limit
+st3=1231235901
+
+if   touch -am -t ${st1} ${f} >/dev/null 2>&1 && \
+     test ! -f ${st1} && test -f ${f}; then
+  shar_touch='touch -am -t $1$2$3$4$5$6.$7 "$8"'
+
+elif touch -am ${st2} ${f} >/dev/null 2>&1 && \
+     test ! -f ${st2} && test ! -f ${st2tr} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$1$2.$7 "$8"'
+
+elif touch -am ${st3} ${f} >/dev/null 2>&1 && \
+     test ! -f ${st3} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$2 "$8"'
+
+else
+  shar_touch=:
+  echo
+  ${echo} 'WARNING: not restoring timestamps.  Consider getting and
+installing GNU '\''touch'\'', distributed in GNU coreutils...'
+  echo
+fi
+rm -f ${st1} ${st2} ${st2tr} ${st3} ${f}
+#
+if test ! -d ${lock_dir} ; then :
+else ${echo} "lock directory ${lock_dir} exists"
+     exit 1
+fi
+if mkdir ${lock_dir}
+then ${echo} "x - created lock directory ${lock_dir}."
+else ${echo} "x - failed to create lock directory ${lock_dir}."
+     exit 1
+fi
+# ============= 10.txt ==============
+if test -n "${keep_file}" && test -f '10.txt'
+then
+${echo} "x - SKIPPING 10.txt (file already exists)"
+
+else
+${echo} "x - extracting 10.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '10.txt' &&
+X
+X                                                                                 ...:...                                                          
+X                                                                              ..:::---::....                                                      
+X                                                                     .   ....:::--::::::::::...                                                   
+X                                                                     ..::::::::::::::::::::::::...                                                
+X                                                                     .:--::::::::::::::::::::::::.                                                
+X                                                                     .:::::::::::::::::::::::::::.                                                
+X                                                                     .::::::::::::::::::::::::::::.                                               
+X                                                                     .:::::::::::::::::::::::::::..  .                                            
+X                                                                     .::::::::::::::::::::--:::::.                                                
+X                                                                     .::::::::::::::---:-----:::::                                                
+X                                                                     .:::::::::::-:::::-----::::::.                                               
+X                                                                     .:::...:::::::::::----:::::::.                                               
+X                                                                     .::.....:::::::::::--::::::::.                                               
+X                                                                     ..::...::::::::---::-----::-:.                                               
+X                                                                        .:-:::::::::::--::::::::-:..                                              
+X                                                                        ...:-==--:::-----=++=-:::...                                              
+X                                                                          .:=++++=-:::--+****+=-.                                                 
+X                                                                         ........:::....:-=+***++=:.                                              
+X                                                                                    ...   ..:=++**++-:.                                           
+X                                                                                       ...    .:-=+**+=-:.                                        
+X                                                                                                 ..:-=+*+=-:.   .                                 
+X                                                                                                     .:-=+*+=-:.    .                             
+X                                                                                                        ..:==++=-:.   ..                          
+X                                                                                                            .:-=++=-:.                            
+X                                                                                                               .::-===-..                         
+X                                                                                                                   .:-==--..                      
+X                                                                                                                      ..:---:..                   
+X                                                                                                                          .::-::..                
+X                                                                                                                          .  ..::::..             
+X                                                                                                                           ..   ...::...          
+X                                                                                                                                    ....          
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '10.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '10.txt'
+if test $? -ne 0
+then ${echo} "restore of 10.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '10.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+61967952981e059696c11c8738a952b5  10.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '10.txt'` -ne 4558 && \
+  ${echo} "restoration warning:  size of '10.txt' is not 4558"
+  fi
+fi
+# ============= 11.txt ==============
+if test -n "${keep_file}" && test -f '11.txt'
+then
+${echo} "x - SKIPPING 11.txt (file already exists)"
+
+else
+${echo} "x - extracting 11.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '11.txt' &&
+X
+X                                                                                 ...:..                                                           
+X                                                                              ..:::---::....                                                      
+X                                                                     .   ....:::--:::::--::::...                                                  
+X                                                                     ..:::::::::::::::::::::::::..                                                
+X                                                                     .:-::::::::::::::::::::::::::.                                               
+X                                                                     ..:::::::::::::::::::::::::::.                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                     ..:::::::::::::::::::::::::::.                                               
+X                                                                      .::::::::--:----------::::::.                                               
+X                                                                      .:::::::::::-----:::::::::::.                                               
+X                                                                      .:::::::::::-----:::::::::::.                                               
+X                                                                      .:.::::::::::---:::::::::::..                                               
+X                                                                      ..:::::::::----------::::::.                                                
+X                                                                       ..:::::::::::--::::::::::..                                                
+X                                                                         .:--::::--===-::::--::..                                                 
+X                                                                         .:-====-=+++++=====-:.    .                                              
+X                                                                         .  ....:=+++++-::...      .                                              
+X                                                                                .-++++=:          ....                                            
+X                                                                                .-=++=-:. .          .                                            
+X                                                                                .:-++=-:.                                                         
+X                                                                                .::=+-::                                                          
+X                                                                                .::==--:                                                          
+X                                                                                .::----:                                                          
+X                                                                                .::::--:                                                          
+X                                                                                .::..--:                                                          
+X                                                                                .::..--:                                                          
+X                                                                                .::..:-:                                                          
+X                                                                                .:. ..:.                                                          
+X                                                                                .:.  .:.                                                          
+X                                                                                ...  ...                                                          
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '11.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '11.txt'
+if test $? -ne 0
+then ${echo} "restore of 11.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '11.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+bf516fc829de2de36874492927fcf499  11.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '11.txt'` -ne 4558 && \
+  ${echo} "restoration warning:  size of '11.txt' is not 4558"
+  fi
+fi
+# ============= 12.txt ==============
+if test -n "${keep_file}" && test -f '12.txt'
+then
+${echo} "x - SKIPPING 12.txt (file already exists)"
+
+else
+${echo} "x - extracting 12.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '12.txt' &&
+X
+X                                                                                 ...:..                                                           
+X                                                                              ..:::---::....                                                      
+X                                                                     ..  ....:::--:::::--:::....                                                  
+X                                                                      ..::::::::::::::::::::::::...                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                      .:::::::::::::::::::::::::::.                                               
+X                                                                      .::::-------------::::::::::..                                              
+X                                                                      .:--:::-----:::::--:::::::::...                                             
+X                                                                      .:-:::::-----:::::::::::..::..                                              
+X                                                                      .:--::::----::::::::::::..::.                                               
+X                                                                      .:---:-----------:::::::.:...                                               
+X                                                                      .:-::::::--::-:::::::::::.                                                  
+X                                                                      ..::::-===---::::::---:..                                                   
+X                                                                         .-=+++++=::::-=++==-:     ...                                            
+X                                                                      ..-=++++=-:.. .:::.... .     ...                                            
+X                                                                   ..:-=+++=-:.                 .......                                           
+X                                                                 ..:=+++=-:.   ..     .....          .                                            
+X                                                              ..:-=++==:..                                                                        
+X                                                            .:--===-:..                                                                           
+X                                                         ..:-===-:..                                                                              
+X                                                       .:--==--:..                                                                                
+X                                                    .::-----::..                                                                                  
+X                                                 ..:-::::::..                                                                                     
+X                                               ..:::::::.....                                                                                     
+X                                            ..::........   ..                                                                                     
+X                                         ...:........                                                                                             
+X                                         .... ....                                                                                                
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '12.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '12.txt'
+if test $? -ne 0
+then ${echo} "restore of 12.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '12.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+5064d953a3222f6c50bfbbe9069ad3a3  12.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '12.txt'` -ne 4411 && \
+  ${echo} "restoration warning:  size of '12.txt' is not 4411"
+  fi
+fi
+# ============= 13.txt ==============
+if test -n "${keep_file}" && test -f '13.txt'
+then
+${echo} "x - SKIPPING 13.txt (file already exists)"
+
+else
+${echo} "x - extracting 13.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '13.txt' &&
+X
+X                                                                                  ..:..                                                           
+X                                                                          .   ...:-----:....                                                      
+X                                                                     .... ...:::::::::---::::...                                                  
+X                                                                      ....::::::::::::::::::::::......                                            
+X                                                                       .::::::::::::::::::::::::::::::.                                           
+X                                                                      ..:::::::::::::::::::::::::::::..                                           
+X                                                                      .:::::::::::::::::::::::::::::.                                             
+X                                                                     ..::::::::::::::::::::::::::::::..                                           
+X                                                                     .::::::::::::::::::::::::::::::--:.                                          
+X                                                                    .:-------------:::::::::::::::::---:.                                         
+X                                                                    .:-::------:::::--::::::::::::::-----:.                                       
+X                                                                    :-::::----::::::::::::::::::::::----:..                                       
+X                                                                    :---:::--------:::::::.......::.....                                          
+X                                                                   .:----------------::::::........                                               
+X                                                                    .:::----:---:::::::::::.:-===:.                                               
+X                                                                  ..:-==++==---::::::::-===-:--:::.                                               
+X                                                             ..::-=+++****++=::::..:-=++++==:                                                     
+X                                                        ..::-=++*****+++=-:...   ..::::....... .  . ...                                           
+X                                                   ..::-=++****+++=--:..                       ........                                           
+X                                              ..::-=++****++=-::..                  ......           .                                            
+X                                         ..:--=++**++==-::..                                                                                      
+X                                    ..:-==+++++==-:...         . .                                                                                
+X                              ...:-==+++==--:...        ..                                                                                        
+X                         ...:--=====--:..                                                                                                         
+X                    ..::--===--::...                                                                                                              
+X               ...:::---:::...                                                                                                                    
+X         ....:::::::....                                                                                                                          
+X      .............                                                                                                                               
+X       ...                                                                                                                                        
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '13.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '13.txt'
+if test $? -ne 0
+then ${echo} "restore of 13.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '13.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+d80db063dea23f81043df68ee5590556  13.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '13.txt'` -ne 4264 && \
+  ${echo} "restoration warning:  size of '13.txt' is not 4264"
+  fi
+fi
+# ============= 14.txt ==============
+if test -n "${keep_file}" && test -f '14.txt'
+then
+${echo} "x - SKIPPING 14.txt (file already exists)"
+
+else
+${echo} "x - extracting 14.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '14.txt' &&
+X
+X                                                                             .    ..:..                                                           
+X                                                                               ..::---::....                                                      
+X                                                                         . ...::::::::---::::..                                                   
+X                                                                       ....:::::::::::::::::::::.....  ....                                       
+X                                                                      ...::::::::::::::::::::::::-:::..::::.                                      
+X                                                                      ..::::::::::::::::::::::::::::::::::..                                      
+X                                                                      .:::::::::::::::::::::::.::::::::::.                                        
+X                                                                    ..:::::::::::::::::::::::::::::::----:...                                     
+X                                                                   ..:-::::::::::::::::::::::::::::::------:..                                    
+X                                                                  .::----:::--:::::::::::::::::::::::::------:.                                   
+X                                                                  .:-::::::::::::--:::::::::::::::::::::-------:..                                
+X                                                                  .::::---::::::::::::::::::::::::::::----------:.                                
+X                                                                 ..--::--------:::::::::.......::::::....:......                                  
+X                                                                  .:-------------::::::::....::.....                                              
+X                                                                 .:----:---:::::::::::::::::....:-=-:..     ..                                    
+X                                                        ...::--==+++++=---::::::::..::-===-.  .:----::.                                           
+X                                                ...::--==++**********++-:---:....:-=++**+=-:.                                                     
+X                                        ...::--==+++********++++===--:......  ..:::::.......     .....                                            
+X                                ...::--==+++*******+++==--:::.....                          ...........                                           
+X                        ....:--==+++*****+++==--:::...             ......   .    .........         ....                                           
+X                ...::--==++++++++==---:::...            ..   .                                                                                    
+X        ...::--==+++++===--::....              . .. ...                                                                                           
+X..:::---=======--::...                .     .                                                                                                     
+------::::...              . ...                                                                                                                  
+X...                                   ..                                                                                                          
+X      ..                                                                                                                                          
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '14.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '14.txt'
+if test $? -ne 0
+then ${echo} "restore of 14.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '14.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+83df55789f9498362f195d6514933b60  14.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '14.txt'` -ne 3823 && \
+  ${echo} "restoration warning:  size of '14.txt' is not 3823"
+  fi
+fi
+# ============= 15.txt ==============
+if test -n "${keep_file}" && test -f '15.txt'
+then
+${echo} "x - SKIPPING 15.txt (file already exists)"
+
+else
+${echo} "x - extracting 15.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '15.txt' &&
+X
+X                                                                                  ..:..                                                           
+X                                                                                ..:---:::....                                                     
+X                                                                          .  ...::::::---::::...                                                  
+X                                                                          ...:::::::::::::::::::::...  .... ....                                  
+X                                                                          .:::::::::::::::::::::---:::::::..::::.                                 
+X                                                                       ..:::::::::::::::::::::::::-------::::::..                                 
+X                                                                     ..:::::::::::::::::::::::::::-----:-:::::.                                   
+X                                                                   ..::::::::::::::::::::::::::::::::---------:..                                 
+X                                                                 ..:--::::::::::::::::::::::::::::::::::::::::--:..                               
+X                                                                ..:----::::::::::::::::::::::::::::::::::::::::----:.                             
+X                                                                .:----:::::----:::::::::::::::::::::::::::::::::----::..                          
+X                                                                .:::-::::::::::::::::......::::::::::::::::------------..                         
+X                                                             ....:--:------:::::::::.........::::::::::....::::::::::...                          
+X                                                                .:-----------::::::::........:::::::..                                            
+X                                                       ....::----------:::::::::::::::::::::----:..::--:..           .                            
+X                                           ....:::---===+++******+=----::::--:::::::-=+=-...:::..:-====-:.                                        
+X                               .....:::---==+++**************++++=-:::-----:::::-=++***+=-.     ...                                               
+X                    .....:::--===+++***********++++=====----:::...  ....... ..::::::.......  ...    ..                                            
+X        ....::::--===+++++****++++++===---:::::......              .                       ... ..  .                                              
+X.::---====+++++++++===---::::.......                   ........... .  .  ..  ................   ...                                               
+=======---:::.....                                                                                                                                
+X...                    .......                                                                                                                    
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '15.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '15.txt'
+if test $? -ne 0
+then ${echo} "restore of 15.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '15.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+f5667926e21f79af4a654db303e00507  15.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '15.txt'` -ne 3235 && \
+  ${echo} "restoration warning:  size of '15.txt' is not 3235"
+  fi
+fi
+# ============= 16.txt ==============
+if test -n "${keep_file}" && test -f '16.txt'
+then
+${echo} "x - SKIPPING 16.txt (file already exists)"
+
+else
+${echo} "x - extracting 16.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '16.txt' &&
+X
+X                                                                                  ......                                                          
+X                                                                                ..:---:::...                                                      
+X                                                                              ..:::::::----:::....      ..                                        
+X                                                                           ..:::::::::::::::---:::::...     ...  ...                              
+X                                                                         ..:::::::::::::::::::::------:::...::..:::.                              
+X                                                                      ..:::::::::::::::::::::::--------------:::::..                              
+X                                                                    .::--:::::::::::::::::::::::-------:-----::::.                                
+X                                                                 ..::-:::::::::::::::::::::::::::::::---------::::..                              
+X                                                                .:--::::::::::::::::::::::::::::::::::-------::::---:..                           
+X                                                                .--------:::::::::::::::::::::::::::::::::::::::::-----:.                         
+X                                                               .:-:::::::---::::::::::...::::::::::::::::::::::::-------::..                      
+X                                                               .:-:::::::::::::::::.......::::::::::::::::::::-------------:..                    
+X                                                               :---------::::::::............:::::::::::::::::::::-------:::..                    
+X                                                              .:----------:::::::::.........::::::::::...     .............                       
+X                                              ......:::----====-:---::::::::::::::::::::::::------:...:::..                                       
+X                               .....:::::---===++++***********+=-:------------::::-==+=-.......--:::-=++=-:.           ..                         
+X                ......::::---===++++*****************++++++++==-::::::::------==++***+==-:        ..........                                      
+X......::::---===+++++++++******++++++======-----::::::.........         .....::::..........     .                                                 
+===++++++++++======----:::::..........                                                               .                                            
+::::::........                                      ....                   . ..........                                                           
+X                      .                                                                                                                           
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '16.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '16.txt'
+if test $? -ne 0
+then ${echo} "restore of 16.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '16.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+2d8663f4c73b2e9c30cf77ab36b27775  16.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '16.txt'` -ne 3088 && \
+  ${echo} "restoration warning:  size of '16.txt' is not 3088"
+  fi
+fi
+# ============= 17.txt ==============
+if test -n "${keep_file}" && test -f '17.txt'
+then
+${echo} "x - SKIPPING 17.txt (file already exists)"
+
+else
+${echo} "x - extracting 17.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '17.txt' &&
+X
+X                                                                                  ......                                                          
+X                                                                               ..::---::::....                                                    
+X                                                                              ..:::::::------::.....                                              
+X                                                                          ..:::::::::::::::-----:-:::....         .. ..                           
+X                                                                        .::::::::::::::::::::::::-------::::......::.::.                          
+X                                                                    ...::::::::::::::::::.:::-----------------::::::::.                           
+X                                                                 ...:-::::::::::::::::::::::::---------------------::.                            
+X                                                               .:::-:::::::::::::::::::::::::::::::::-:--------------::..                         
+X                                                              .:--::::::::::::::::::::::::::::::::::::------------------:..                       
+X                                                              .:------:::::::::::::::::::::::::::::::::::::::::::::-----:--:.                     
+X                                                              .--:::::---::::::::::....::-:::::::::::::::::::::::::---------::..                  
+X                                                          ....:-::::::::::::::::.......::::::::::::::::::::::::::---------::----:.                
+X                                                             .:------:::::::::.............::::::::::::::::::::::----------------:.               
+X                                                    ..........:-------::::::::::..........:::::::::::::::..............::::::::...                
+X                                .....::::::-----=====+++++++=-::::::::::::::::::::::::::-------------::....                                       
+X          .......:::::-----====+++++***********************+=-:----------------===+++-:..........-======++=-:. ..      ...                        
+-----=====+++++++++++**++++++++++++++++==============-------::::::::::::--===++****++=-:.        ....:::::::..                                    
+======-------:::::::::.......................                            .................   ....                                                 
+X                                                       ........       .                                .  ...                                     
+X                                                                           ...........                                                            
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '17.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '17.txt'
+if test $? -ne 0
+then ${echo} "restore of 17.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '17.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+2b9b25492dd3b8105060e1f5ecf98064  17.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '17.txt'` -ne 2941 && \
+  ${echo} "restoration warning:  size of '17.txt' is not 2941"
+  fi
+fi
+# ============= 18.txt ==============
+if test -n "${keep_file}" && test -f '18.txt'
+then
+${echo} "x - SKIPPING 18.txt (file already exists)"
+
+else
+${echo} "x - extracting 18.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '18.txt' &&
+X
+X                                                                                  ......                                                          
+X                                                                               ..::---::::.....                                                   
+X                                                                             ...:::::::------:::.....                                             
+X                                                                         ...::::::::::::-------:::::::.....            ...                        
+X                                                                       ..::::::::::::::::::::::::---------::::....    .::.                        
+X                                                                   ...:::::::::::::::::::::---------------------::::.:::..                        
+X                                                                ..:::::::::::::::::::::::::---------------------------::.                         
+X                                                              .:::::::::::::::::::::::::::::::::-::---------------------::..                      
+X                                                             .:-::::::::::::::::::::::::::::::::::::-----------------------::.                    
+X                                                             .::::-:::::::::::::::::::::::::::::::::::::--::---::::-------:::::.                  
+X                                                             .::::::--:::::::::::...::-:::::::::::::::::::::::::::::---------=-::..               
+X                                                          .. .:::::::::::::::::.....::::::::::::::::::::::::::::::::----------::---:.             
+X                                                            .:----:::::::::............::::::::::::::::::::::::::::------------------:.           
+X                                      ...........:::::::::::.:----::::::::::::..........:::::::::::::::::::::::......:::::::--------:..           
+X         .........:::::::-------========+++++++++********++-::-:::::::::::::::::::::::-------------::::::......            .........              
+-========+++++++++++*************************+++++++++++++=-::--------:-----====+++=-:......:::::::-=++++==-:.. .   .                             
+---:::::::::::::::::::::::::::::::.....................................:-==+++****+==:.           ..:---===--:.                                   
+X                                                                        ................  ......                                                  
+X                        ........                       ....          .                                ....                                        
+X                                                                         ........                                                                 
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '18.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '18.txt'
+if test $? -ne 0
+then ${echo} "restore of 18.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '18.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+d07d08bbb5cb46781b10ef68f5261408  18.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '18.txt'` -ne 2941 && \
+  ${echo} "restoration warning:  size of '18.txt' is not 2941"
+  fi
+fi
+# ============= 19.txt ==============
+if test -n "${keep_file}" && test -f '19.txt'
+then
+${echo} "x - SKIPPING 19.txt (file already exists)"
+
+else
+${echo} "x - extracting 19.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '19.txt' &&
+X
+X                                                                                  ......                                                          
+X                                                                               ..::---:::::...                                                    
+X                                                                             ...::::::-------:::.....                                             
+X                                                                         ...::::::::::---------:::--:::.....              ..                      
+X                                                                       ..:::::::::::::::::::::::-----------::::....     .::.                      
+X                                                                   ..::::::::::::::::::::------------:-----------::::...:-.                       
+X                                                                ..:::::::::::::::::::::::--------------------------------:.                       
+X                                                             ..::::::::::::::::::::::::::::::-::::---------------------:::::.                     
+X                                                             .:-::::::::::::::::::::::::::::::::::---------------------------:..                  
+X                                                             .:::--:::::::::::::::::::::::::::::::::------------------------::::..                
+X                                                             .::::::::::::::::...:::::::::::::::::::::::::::::::::::--------::-=-:..              
+X                                                            .:::::::::::::::.....:::::::::::::::::::::::::::::::::::------------:::::.            
+X                                                         .. .:---::::::::............::::::::::::::::::::::::::::::-------------------:..         
+X      .......................:::::::::::--------------====-:::-::::::::::::..........:::::::::::::::::::::::::::::::::::----------------.         
+--=============++++++++++++++++++***********************++=-:---:--:::::::::::::::::--------------::::::::::.......  ........:::::::::..          
+:::::::::::::::::::::::::----------------------------------:::::::---::--====+++++=-::::::::::::::::-==+++=:.                                     
+X                                                                .......:-==+++++===-.              .:==++++=-:..                                  
+X   .....                ..      .........   ..                               .......... .   ......      .......                                   
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '19.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '19.txt'
+if test $? -ne 0
+then ${echo} "restore of 19.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '19.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+72933cc9d3897da25586c9b6e7e8a4b9  19.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '19.txt'` -ne 2647 && \
+  ${echo} "restoration warning:  size of '19.txt' is not 2647"
+  fi
+fi
+# ============= 1.txt ==============
+if test -n "${keep_file}" && test -f '1.txt'
+then
+${echo} "x - SKIPPING 1.txt (file already exists)"
+
+else
+${echo} "x - extracting 1.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '1.txt' &&
+X
+X                                                                                .......                                                           
+X                                                                         .....::::---:::..                                                        
+X                                                                   .....:::::-----------::..                                                      
+X                                             ....           .....::::----:::::--------:::::::...                                                  
+X                                            .:::..    ....:::::---:::--:::::::::------::::::::::..                                                
+X                                            ..:::..::::::--------:::::-------::::::::::::::::::::::...                                            
+X                                          . . .:--:-:::----------------------------:::::::::::::::::::...                                         
+X                                           ..:::::::::::-----------------------::::::::::::::::::::::::::..                                       
+X                                         ..:-----------------------------:::::::::::::::::::::::.:::::::-:.                                       
+X                                       ..:::------------:----::----------:::::::::::::::::::::::.:::::::::.                                       
+X                                     ..:-=-:-----------:::::::::::::::::::::::::::::::::::::::::::::::::::..                                      
+X                                  ..::-::--------------::::::::::::::::::::::::::::::::::::::.:::::::::::::.                                      
+X                                 .:-=---------------:::::::::::::::::::::::::::::::::::...........:::::::-:......... .                            
+X                                 ..:-------------:::::::::::::::::::::::::::::::::::::::::......::::::::::::--============-----------------:::::::
+X                                     ............... .......:::::::::::------------------::::::::::-----:::--=+++*******************+++**+++++++++
+X                                                           .:======-:::::::::::.::::---==++++===-------::::::---------::::::::::::::..............
+X                                                        ....:-=++++=:.               .:--=++===-:.......                                          
+X                                                           ..........       ..     ....         .....                                             
+X                                                                          ....                ...                                                 
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '1.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '1.txt'
+if test $? -ne 0
+then ${echo} "restore of 1.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '1.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+8ea4871afabbe42fc7d853fd795b15c8  1.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '1.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '1.txt' is not 2794"
+  fi
+fi
+# ============= 20.txt ==============
+if test -n "${keep_file}" && test -f '20.txt'
+then
+${echo} "x - SKIPPING 20.txt (file already exists)"
+
+else
+${echo} "x - extracting 20.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '20.txt' &&
+X
+X                                                                                  ......                                                          
+X                                                                               ..::---:::::....                                                   
+X                                                                             ...::-::--------::::....                                             
+X                                                                         ...::::::::------::::::----:::.....              ...                     
+X                                                                       ..::::::::::::::--:::::-------------::::....      :-::.                    
+X                                                                   ...::::::::::.::::---------------::-----------::::...:=-:.                     
+X                                                                ..::::::::::::::::::::----------------------------------=-:                       
+X                                                              ..::::::::::::::::::::::::::---------------------------::-::::.                     
+X                                                             ..:-:::::::::::::::::::::::::::::::------------------------::::::..                  
+X                                                             ..:::::::::::::::::::::::::::::::::---------------------------:::::..                
+X                                                             .:::::::::::::...:::::::::::::::::::::::::::--:::::::::-------:::--::..              
+X                          ..                                 .:::::::::::......:::::::::::::::::::::::::::::::::::::----------=--:::..            
+X                             .................................:-:::::::...........::::::::::::::::::::::::::::::::::-----------::-----:.          
+::::-----------==========================+++++++++++++=++==-::-::::::::::.........:::::::::::::::::::::::::::::::::::-----------------=-:.        
+X..........::::::::::------------=======++++++++++++++**++++=-:-----:::::::::::::::---------------:::::::::::::::........:::::-----------:.        
+X                                       .............:::::::::..:::::::::-===+++++=--::::::::::::::::--=====-:..              ..........           
+X                                                                       .:-==+++==-:.               .:=+***+=:...                                  
+X                                                                              .....   .     .....  ......::.....                                  
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '20.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '20.txt'
+if test $? -ne 0
+then ${echo} "restore of 20.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '20.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+0f981ae19c83d4cbacbf336e6bc52218  20.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '20.txt'` -ne 2647 && \
+  ${echo} "restoration warning:  size of '20.txt' is not 2647"
+  fi
+fi
+# ============= 21.txt ==============
+if test -n "${keep_file}" && test -f '21.txt'
+then
+${echo} "x - SKIPPING 21.txt (file already exists)"
+
+else
+${echo} "x - extracting 21.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '21.txt' &&
+X
+X                                                                                  .......                                                         
+X                                                                               ..::---::::.....                                                   
+X                                                                              ..::----------::::.....                                             
+X                                                                         ....:::::-------::::::----::::....             ..  ..                    
+X                                                                       ..:::::::::::::::::::::------------::::....     .-:.:-.                    
+X                                                                    ...:::::::.::::-----------------------------::::..:==---:.                    
+X                                                                 ..::::::::::::::::-----------------------------------==-::.                      
+X                                                               ..:::::::::::::::::::::::--:-------------------------:::::::..                     
+X                                                               .:::::::::::::::::::::::::::::------------------------::::::::.   .                
+X                                                               .::::::::::::::::::::::::::::::----------------------------::::...                 
+X                                                            .  .:::::::::...::::::::::::::::::::::::::---::::::::--------::::-:::.                
+X                                                               .:::::.......:::::::::::::::::::::::::::::::::::::-----------==-::::.              
+X    ......:::::::::::::::::::::::::::::::::::::::::::::::::::..:::::::.........:::::::::::::::::::::::::::::::::::------------::----:.            
+X    .......::::::::-------====+++++++++++****+++++++++++++++=-:::::::::........:::::::::::::::::::::::::::::::::::-----------------=--:...        
+X                           ..........::::---------===========-::::::::::::::::::--------------:::::::::::::::::::::::::::-----------===:.         
+X                                                     .............:::::::-=+++++=----::::::::::::::::----==-:....       .....::::::--:..          
+X                                                                       .:--=====-....           ...:=+****=-:..                   ..              
+X                                                                             .. ..                ..::--::..                                      
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '21.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '21.txt'
+if test $? -ne 0
+then ${echo} "restore of 21.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '21.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+ed26b3d50982d7e279435df64eca9f36  21.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '21.txt'` -ne 2647 && \
+  ${echo} "restoration warning:  size of '21.txt' is not 2647"
+  fi
+fi
+# ============= 22.txt ==============
+if test -n "${keep_file}" && test -f '22.txt'
+then
+${echo} "x - SKIPPING 22.txt (file already exists)"
+
+else
+${echo} "x - extracting 22.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '22.txt' &&
+X
+X                                                                                  ......                                                          
+X                                                                                ..:---::::.....                                                   
+X                                                                              ..:----------::::.....                                              
+X                                                                          ...:::--:-----:::::----::::....           ....   .                      
+X                                                                        ..::::::::::::::::::------:::---::::....  ..--:...--.                     
+X                                                                     ...::::::::------------------------------::..:===:.:==-.                     
+X                                                                   ..:::::::::::------------------------------:::-===-::-=:.                      
+X                                                                 ..:::::::::::::::::----------------------------:--::::::.                        
+X                                                                 .:::::::::::::::::::::::------------------------::::::::..                       
+X                                                                .:::::::::::::::::::::::::-----------------------------::::.                      
+X                                                                .::::::...:::::::::::::::::::::-::----:::::::--------:::-::::.                    
+X                 .......................                        .::::......:::::::::::::::::::::::::::::::::::-------:--=-::::..                  
+X                 .....::::---======================-----------:::::::........:::::::::::::::::::::::::::::::::---------=--:::--:.                 
+X                          ........::::::---=====+++++++***++++=-::::::::....:::::::::::::::::::::::::::::::::::---------:--------:.               
+X                                                .....:::::-----:::::::::::::---------------:::::::::::::::::::::::---------------=-:.             
+X                                                               .........:-=++++=------::::::::-:::::::::---:..........::::---------.              
+X                                                                       ..:-=---:......      ......-==+++++=-:.            ....:::.                
+X                                                                      .                          .-====:.......                                   
+X                                                                                                 .   .                                            
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '22.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '22.txt'
+if test $? -ne 0
+then ${echo} "restore of 22.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '22.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+c0d9c70dc2a6431c1ce8f4bbc626bcf3  22.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '22.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '22.txt' is not 2794"
+  fi
+fi
+# ============= 23.txt ==============
+if test -n "${keep_file}" && test -f '23.txt'
+then
+${echo} "x - SKIPPING 23.txt (file already exists)"
+
+else
+${echo} "x - extracting 23.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '23.txt' &&
+X
+X                                                                                .  .....                                                          
+X                                                                                ..::-::::.....                                                    
+X                                                                              .::--------::::.....                                                
+X                                                                           ..::-----::::::----:::::...          ...    ..                         
+X                                                                         ..::------:::::::----::::---:::...  .:-:.  ..:--.                        
+X                                                                       ..:::::---------------------------::::-==-:..:-=+=:                        
+X                                                                     ..:::::::--------------------------:::-====-:::-==:.                         
+X                                                                    .::::::::::::------------------------------:::.::-.                           
+X                                                                  ..::::::::::::::::::---------------------::::::::::.
+X                                                                  .:::::::::::::::::::---------------------------::::::.                          
+X                              .                                  .:::::..::::::::::::::-:::-::-----:::::-------::::::::..                         
+X                              ...:::::::::::::::::.............  .:::....:::::::::::::::::::::::::::::::-------::---::::..                        
+X                               .......:::---===++++++++++++=====--:::.....::::::::::::::::::::::::::::--------------::::::..                      
+X                                              ....:::--====++++++=::::::.::::::::::::::::::::::::::::::::---------::::---::..                     
+X                                                           ....::::::::::::-----------:::::::::::::::::::::----------------::.                    
+X                                                                      ...:-+++=---------::::::::::::::::::.....::--------==-:..                   
+X                                                                         .:---:. ......   .....:---:-=+*+=-:.    ...:::---::..                    
+X                                                                                              .-===:::::::::.          ...                        
+X                                                                                          .  .......                                              
+SHAR_EOF
+  (set 20 23 01 12 17 36 20 '23.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '23.txt'
+if test $? -ne 0
+then ${echo} "restore of 23.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '23.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+66ea673369cd7fc5653a1dd5dda433e8  23.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '23.txt'` -ne 2766 && \
+  ${echo} "restoration warning:  size of '23.txt' is not 2766"
+  fi
+fi
+# ============= 24.txt ==============
+if test -n "${keep_file}" && test -f '24.txt'
+then
+${echo} "x - SKIPPING 24.txt (file already exists)"
+
+else
+${echo} "x - extracting 24.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '24.txt' &&
+X
+X                                                                                  .....                                                           
+X                                                                               ..:::-:::....                                                      
+X                                                                            ..::--------::::....                                                  
+X                                                                         ..::-----:--:::----::::....       ..      .                              
+X                                                                         .:-------:::::-----:::---:::...::::.   ..:--:.                           
+X                                                                       ..:::----------------------------===-:...:-===-.                           
+X                                                                      .::::-------------------------:--=====-::--==-:.                            
+X                                                                     .::::::::-----------------------------:::::---.                              
+X                                                                    .:::::::::::::---------------------:::::::.:::.                               
+X                                                                   .:::::::::::::::---------------------:::::::::::.                              
+X                                        .........                  .::..::::::::::::::--:-----:::::--------::-:::::.                              
+X                                        ...:::----------:::::.......:....:::::::::::::::::::::::::::-----:::::::::::.                             
+X                                           ......:::-===+++++*++++=-:....:::::::::::::::::::::::::-----------:::::::..                            
+X                                                        ...:::--===-:::::::::::::::::::::::::::::::::-------:::::::::.                            
+X                                                    .            .....:::::--------::::::::::::::::::::------------::..                           
+X                                                              ..         ..=+-::-------::::::::::::::::::::---=--==-::.                           
+X                                                                          .:-:.     ........::::::--==+=:....::-----::.                           
+X                                                                                            :==:.::------::.  .......                             
+X                                                                           ...            ...::.                                                  
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '24.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '24.txt'
+if test $? -ne 0
+then ${echo} "restore of 24.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '24.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+ebb32f663c5fa397d9dbc52fb6fd015e  24.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '24.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '24.txt' is not 2794"
+  fi
+fi
+# ============= 25.txt ==============
+if test -n "${keep_file}" && test -f '25.txt'
+then
+${echo} "x - SKIPPING 25.txt (file already exists)"
+
+else
+${echo} "x - extracting 25.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '25.txt' &&
+X
+X                                                                                  .....                                                           
+X                                                                               ..:::-:::....                                                      
+X                                                                           ..:::----::::::::....                                                  
+X                                                                       ...::---::::::---::::::::...        ...                                    
+X                                                                       .:----::::::::---:::--::--=-:.    .:-=-..                                  
+X                                                                       .:----------------------=====-.  .:-===-..                                 
+X                                                                       .:-------------------::-=====-:::--===-..                                  
+X                                                                      .:::::----------------:-------:::::----.                                    
+X                                                                      .::::::::---------------::::::::..::::.                                     
+X                                                                  .. .:::::::::-----------------::::::::::::.                                     
+X                                                      .........       .:::::::::::::-------------::-::::::-:.                                     
+X                                                      ...::-====---:::..::::::::::::::::::::----::::::::::::.                                     
+X                                                           ...::-=+++=:::::::::::::::::::::--------::::::::.. .                                   
+X                                                                  ..::::::-:::::::::::::::::::----:::::::::.                                      
+X                                                                      .....:--::::::::::::::::::---------::.                                      
+X                                                                          .=+:...::-:::::::::::::::------:.                                       
+X                                                                         ..:::.    ..  ..:::::::::-=====-:.                                       
+X                                                                                      .:=-.  .:-==+==--:..     ..                                 
+X                                                                           ...        ..::.        .. .                                           
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '25.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '25.txt'
+if test $? -ne 0
+then ${echo} "restore of 25.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '25.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+7a9f301aed5fc3d9fa09bcb2250e8764  25.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '25.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '25.txt' is not 2794"
+  fi
+fi
+# ============= 26.txt ==============
+if test -n "${keep_file}" && test -f '26.txt'
+then
+${echo} "x - SKIPPING 26.txt (file already exists)"
+
+else
+${echo} "x - extracting 26.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '26.txt' &&
+X
+X                                                                                 ......                                                           
+X                                                                              ..::::-::::...                                                      
+X                                                                          ..:::----::::::::::...                                                  
+X                                                                       ..::---:::::-:::::::::::::...                                              
+X                                                                      .:--::::::::::::----:::::::---:..                                           
+X                                                                      .:-:--::::-----=====-:::::--====:.                                          
+X                                                                      .:----:::------======-:::--====-.                                           
+X                                                                      .::::::------::-===--:::::---=-:                                            
+X                                                                      .:::::----------:::::::::::::::.                                            
+X                                                                      .:::::-----------::::::::::::::.                                            
+X                                                                    ..::::::::::::::-----:::::::::--:.                                            
+X                                                                    ..:::::::::::::::::::::::::::::::.                                            
+X                                                                       ::::::::::::::---:::::::----:::.                                           
+X                                                                      .:::::::::::::::-:::::::::--::-:.                                           
+X                                                                        ....-::::::::::---------:::::..                                           
+X                                                                          .=+--....:::--------::....                                              
+X                                                                         ..:....  .....:-=--::::..                                                
+X                                                                                .:===:. .:---+++=-:..          ..                                 
+X                                                                           ..   ..::...    .........                                              
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '26.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '26.txt'
+if test $? -ne 0
+then ${echo} "restore of 26.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '26.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+8521ae3af34983e061b18f73d5d1cfd6  26.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '26.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '26.txt' is not 2794"
+  fi
+fi
+# ============= 27.txt ==============
+if test -n "${keep_file}" && test -f '27.txt'
+then
+${echo} "x - SKIPPING 27.txt (file already exists)"
+
+else
+${echo} "x - extracting 27.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '27.txt' &&
+X
+X                                                                                 .......                                                          
+X                                                                             ...::::-::::...                                                      
+X                                                                          ..:::---:::::::-:::...                                                  
+X                                                                      ..:::::::-::::::::::::::::...                                               
+X                                                                     .::-:::-----::::::----::::::::.                                              
+X                                                                     .:-----====--:::::-====-::::::.                                              
+X                                                                     .:------====-::::-=====--:::::.                                              
+X                                                                     ..:::----==--::::----=--::::::.                                              
+X                                                                     ..::----::::::::::::::::::::::.                                              
+X                                                                     .::::---::::::::::::::::::::::.                                              
+X                                                                     .::::::::::::::::::--:::::::::.                                              
+X                                                                     .:::::::::::::::::::-::::::::..                                              
+X                                                                     .:-::::::::::::------::::::::..                                              
+X                                                                      .::::::::::::::----:::::::::..                                              
+X                                                                       ...:------::::::::::::::::..                                               
+X                                                                       ..:----------::::::::-:..                                                  
+X                                                                       ..:-=-----:::::::..::..                                                    
+X                                                                       ....:---==-. ...:-+++-..                                                   
+X                                                                           ........    ....:::.                                                   
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '27.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '27.txt'
+if test $? -ne 0
+then ${echo} "restore of 27.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '27.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+d366eef2eb599087ea098ac50c1f9af0  27.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '27.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '27.txt' is not 2794"
+  fi
+fi
+# ============= 28.txt ==============
+if test -n "${keep_file}" && test -f '28.txt'
+then
+${echo} "x - SKIPPING 28.txt (file already exists)"
+
+else
+${echo} "x - extracting 28.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '28.txt' &&
+X
+X                                                                                 ......                                                           
+X                                                                             ...::::-:::...                                                       
+X                                                                         ...::::::::::::--:::..                                                   
+X                                                                     ....:::::::::::::-:::::::::...                                               
+X                                                                   .:---::::::::--::::::::::::::::..                                              
+X                                                                  ..-===--::::-====--:::-:::::::::.                                               
+X                                                                   .:-===-::::======-:::---:::::::.                                               
+X                                                                     .---:::::---==--:::-----:::::.                                               
+X                                                                     .:::::::::::::-:::::---::::::.                                               
+X                                                                    .:::::::::::::::::::::::::::::.                                               
+X                                                                   .::::::::-------:::::::::::::::.                                               
+X                                                                  .::::::::::::---::::::::::::::::.                                               
+X                                                                ..:-:::::--------:::::::::::::::::.                                               
+X                                                               .::--::::::-------:::::::::::::::::.                                               
+X                                                              .:------:::::::-:::::::::::::::....                                                 
+X                                                             .:-----------:::::::::::::::-=++:.                                                   
+X                                                            ..:-------------:...::::..:...:::..                                                   
+X                                                               ..:::...:--=+=-:. . .-++=:                                                         
+X                                                                       .........   ..::::.. .                                                     
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '28.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '28.txt'
+if test $? -ne 0
+then ${echo} "restore of 28.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '28.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+a1dc8ae09aad9925f1802a4c3c863188  28.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '28.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '28.txt' is not 2794"
+  fi
+fi
+# ============= 29.txt ==============
+if test -n "${keep_file}" && test -f '29.txt'
+then
+${echo} "x - SKIPPING 29.txt (file already exists)"
+
+else
+${echo} "x - extracting 29.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '29.txt' &&
+X
+X                                                                                 ......                                                           
+X                                                                             ...::::-:::...                                                       
+X                                                                         ....:::::::::---:::..                                                    
+X                                                             ..       ...:::::::::-::::::::::::...                                                
+X                                                           .:--:   ..:--:::::::::::::::::::::::::..                                               
+X                                                           .-===:...-====-::::::::::::::::::::::::.                                               
+X                                                            .:-==:::-=====-:::-------:::::::::::::                                                
+X                                                              .--:::---===-:::::-------:::::::::::.                                               
+X                                                              .::::::::::-::::::---------:::::::::.                                               
+X                                                           ..:::::::--:::::::::::-::::--::::::::::.  ..                                           
+X                                                         ..::::::---------::::::::::::::::::::::::.    ........                                   
+X                                                        .::-:::-:::::----:::::::::::::::::::::::::::---===-:...                                   
+X                                                      ..:--:::-==--------:::::::::::::::::::::::::=+==-:...     .                                 
+X                                                    .::----::::---------::::::::::::::::::::::::::...                                             
+X                                                  ..:---------:--------::::::::::::::::::::::....                                                 
+X                                                 .:-===-----------::::...::::::::::::::...:=+:.                                                   
+X                                                 ...:-----:::::......:--::..::::::...    ..:::.                                                   
+X                                                     ......       .:--=+=-:.  ..==:.  .                                                           
+X                                                                  ...          .:::.       ..                                                     
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '29.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '29.txt'
+if test $? -ne 0
+then ${echo} "restore of 29.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '29.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+6da2d99191fdec5008b677e8b7c470da  29.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '29.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '29.txt' is not 2794"
+  fi
+fi
+# ============= 2.txt ==============
+if test -n "${keep_file}" && test -f '2.txt'
+then
+${echo} "x - SKIPPING 2.txt (file already exists)"
+
+else
+${echo} "x - extracting 2.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '2.txt' &&
+X
+X                                                                                .......                                                           
+X                                                                         .....::::---:::..                                                        
+X                                                                   .....:::::-----------::..                                                      
+X                                             ...            .....::::----:::::--------:::::::...                                                  
+X                                            .:::..    ....:::::---:::--:::::::::------::::::::::..                                                
+X                                            ..:::..::::::--------:::::-------::::::::::::::::::::::...                                            
+X                                          . . .:-::-:::----------------------------:::::::::::::::::::...                                         
+X                                           ..:::::::::::-----------------------::::::::::::::::::::::::::..                                       
+X                                         ..:-----------------------------:::::::::::::::::::::::.:::::::-:.                                       
+X                                       ..:::------------:----::----------:::::::::::::::::::::::.:::::::::.                                       
+X                                     ..:-=-:-----------:::::::::::::::::::::::::::::::::::::::::::::::::::..                                      
+X                                  ..::-::--------------::::::::::::::::::::::::::::::::::::::.:::::::::::::.                                      
+X                                 .:-=---------------:::::::::::::::::::::::::::::::::::...........:::::::-:......... .                            
+X                                 ..:-------------:::::::::::::::::::::::::::::::::::::::::......::::::::::::--============-----------------:::::::
+X                                     ............... .......:::::::::::------------------::::::::::-----:::--=+++*******************+++**+++++++++
+X                                                           .:======-:::::::::::.::::---==++++===-------::::::---------::::::::::::::..............
+X                                                        ....:-=++++=:.               .:--=++===-:.......                                          
+X                                                           ..........       ..     ....         .....                                             
+X                                                                          ....                ...                                                 
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '2.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '2.txt'
+if test $? -ne 0
+then ${echo} "restore of 2.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '2.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+876d939e4a5b8716f31fa868ce37ba19  2.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '2.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '2.txt' is not 2794"
+  fi
+fi
+# ============= 30.txt ==============
+if test -n "${keep_file}" && test -f '30.txt'
+then
+${echo} "x - SKIPPING 30.txt (file already exists)"
+
+else
+${echo} "x - extracting 30.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '30.txt' &&
+X
+X                                                                                  .....                                                           
+X                                                                              ...:::-:::..                                                        
+X                                                                          ...:::::::-----:::.                                                     
+X                                                        ..             ...:::::--:::::::::--::....                                                
+X                                                      .:--.  .:-:.  ..::::::::::::::::::::::::::..                                                
+X                                                      .:-=-:..-==-:::::::::::::::::::::::::::::::.                                                
+X                                                        .-=-::-====-:::::---------::::::::::::::::.                                               
+X                                                         .:::::---=--::--:::--------:::::::::::::::.                                              
+X                                                        ..:::::::::::::::::-----------:::::::::::::..                                             
+X                                                      ..:::::----::::::::::-----:::---::::::::::::::. .. .  .                                     
+X                                                    .:::::-----------:::::::::::::::::::::::::::::::.             ........                        
+X                                                  .::-:---::::-------:::::::::::::::::::::::::::::::...::::::----==---:...                        
+X                                               ..:---::-===---------::::::::::::::::::::::::::::::::=+++++++==--::....                            
+X                                             ..:----:::::----------:::::::::::::::::::::::::::::::::-=--::..                                      
+X                                           .:--=------------------:::::::::::::::::::::::::--:::.....          .                                  
+X                                           .:-==------------::::.......::::::::::::::--:..:++:.                                                   
+X                                             .::::::..:......  ..:-===-:::::::........   ..--:.                                                   
+X                                                               .::--=---:...==:.                                                                  
+X                                                                           .:::.          ...                                                     
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '30.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '30.txt'
+if test $? -ne 0
+then ${echo} "restore of 30.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '30.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+e1039c2d57e42e9183cc62779281fa4a  30.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '30.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '30.txt' is not 2794"
+  fi
+fi
+# ============= 31.txt ==============
+if test -n "${keep_file}" && test -f '31.txt'
+then
+${echo} "x - SKIPPING 31.txt (file already exists)"
+
+else
+${echo} "x - extracting 31.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '31.txt' &&
+X
+X                                                                                 ......                                                           
+X                                                                             ...:::-:::..                                                         
+X                                                                        ....:::::-------::..                                                      
+X                                                   .  .            ...::::::--::::::::::--::...                                                   
+X                                                  :-:..::.    ....:::::::::::::::::::::::::::::.                                                  
+X                                                  .--::-=-...::::::::------::::::----:::::-:::::..                                                
+X                                                    :-:-===-:::::::---------::::::-------------::..                                               
+X                                                    .::::---::::--:::-----------::::::--:::::::::::..                                             
+X                                                 ..::::::::::::::::----------------::::::::::::::::::.                                            
+X                                               ..::-------------::----------------::::::::::::::::::::.                     .                     
+X                                            ..::::::::----------::::::::::::::::::::::::::::::::::::::.                                           
+X                                          ..::::----::----------::::::::::::::::::::::::::::::::::::::. ..................::::::::::::...         
+X                                       ..::-::::--=----------:::::::::::::::::::::::::::::::::::::::::-=======++++++++++=====--::::.....          
+X                                     ..:------:::::---------:::::::::::::::::::::::::::::::::::::.::::=++++++===---::::....                       
+X                                     .-==------------------:::::::::::::::::::::::::------------::::::::::....                                    
+X                                     ..:-----::-::::::.........:::::::::::--::::----------=++=:....             .                                 
+X                                        ....   .            ..:=+++=-::-=-:..............:--:-:.                                                  
+X                                                            ...:::::::-===:                                                                       
+X                                                                      ......               ...                                                    
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '31.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '31.txt'
+if test $? -ne 0
+then ${echo} "restore of 31.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '31.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+b0ac30234ae1fa297f80e1d61c39c1d9  31.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '31.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '31.txt' is not 2794"
+  fi
+fi
+# ============= 3.txt ==============
+if test -n "${keep_file}" && test -f '3.txt'
+then
+${echo} "x - SKIPPING 3.txt (file already exists)"
+
+else
+${echo} "x - extracting 3.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '3.txt' &&
+X
+X                                                                                .......                                                           
+X                                                                          ....::::----::.                                                         
+X                                                                   .....:::::-----------::..                                                      
+X                                            .......         .....:::----::::::-------::::::::...                                                  
+X                                            .:::::.   ....::::----::---:::::::::----::::::::::::..                                                
+X                                            .:::::::::::--------::::--------:::::::::::::::::::::::...                                            
+X                                              .:::-------------------------------::::::::::::::::::::::...                                        
+X                                            ..:::::--:----------------------::::::::::::::::::::::::::::::..                                      
+X                                          ..:--------------------------:::::::::::::::::::::::::::::::::--:.                                      
+X                                        ..:::----------:----::---------::::::::::::::::::::::::::::::::::-:.                                      
+X                                      ..:-------------:::::::::::::::::::::::::::::::::::::::::::::::::::-:.                                      
+X                                    .::--::--------:-:::::::::::::::::::::::::::::::::::........:::::::::--. .... ..                              
+X                                    .-=------------:::::::::::::::::::::::::::::::::.............::::::::--:.                                     
+X                                    ...::::::::::::..:::::::::::::::::::::::::::::::.............::::::::::::------------::::::::............     
+X                                                        ......:::::::----------------:::::::::::::::::::---:--=+++****************+++++++++++=====
+X                                     .                      .-=++++=:::::::::::::::::-==+++====-----------:::-====================================
+X                                                          .:-======-.               .:-=++++++==-:.....................                           
+X                                                          .....      ........... ...................                                              
+X                                                                 ... .      .                                                                     
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '3.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '3.txt'
+if test $? -ne 0
+then ${echo} "restore of 3.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '3.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+f207c74a1a371c9763478a97611c4b7e  3.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '3.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '3.txt' is not 2794"
+  fi
+fi
+# ============= 4.txt ==============
+if test -n "${keep_file}" && test -f '4.txt'
+then
+${echo} "x - SKIPPING 4.txt (file already exists)"
+
+else
+${echo} "x - extracting 4.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '4.txt' &&
+X
+X                                                                               ........                                                           
+X                                                                          ....::::----::.                                                         
+X                                                                   ......:::------------::..                                                      
+X                                             .........      .....:::---:::::------:-:::::::::...                                                  
+X                                             .:::.:::.....::::--------::::::::--::::::::::::::::..                                                
+X                                             .::::::::::-------:::---------::::::::::::::::::::::::...                                            
+X                                               .:::::-------------------------:::::::::::::::::::::::::...                                        
+X                                           .. ..:::----------------------:::::::::::::::::::::::::::::::::..                                      
+X                                          .  .:----------------------::::::::::::::::::::::::::::::::::---:.                                      
+X                                           .:---------:::--::-------:::::::::::::::::::::::::::::::::-----:.                                      
+X                                         ..:---------::::::::::::::::::::::::::::::::::::::::::::::::-:::::...                                    
+X                                        .----:-----::::::::::::::::::::::::::::::::::.........:::::::::::::........                               
+X                                        .:---------::::::::::::::::::::::::::::::...............::::::::::-:                              .       
+X                                          ...............:::::::::::::::::::::::::.............:::::::::::::::::::::............                  
+X                                                           ....:::::---------------::::::::::::::::::::::::::-=+++++++++++++======---------::::::.
+X                                                ..        ..:-=+*++=-:::::::.......:-==++======--------------==+++++*****************************+
+X                                                          .::-----::.             .:--=+++++++==-:....::.....::::::::::::::::::::::::::::::-------
+X                                                       ...            ............................                                                
+X                                                               .... .    ...                       .....                         ........       . 
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '4.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '4.txt'
+if test $? -ne 0
+then ${echo} "restore of 4.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '4.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+cf51d7361c01d313a262ab0878d209c9  4.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '4.txt'` -ne 2794 && \
+  ${echo} "restoration warning:  size of '4.txt' is not 2794"
+  fi
+fi
+# ============= 5.txt ==============
+if test -n "${keep_file}" && test -f '5.txt'
+then
+${echo} "x - SKIPPING 5.txt (file already exists)"
+
+else
+${echo} "x - extracting 5.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '5.txt' &&
+X
+X                                                                                .......                                                           
+X                                                                          ....::::----::.                                                         
+X                                                                    .....:::-----------:::..                                                      
+X                                               ..........     .....::---:::----::::::::::::::...                                                  
+X                                               .:-:..:::....:::::------::::::-::::::::::::::::::..                                                
+X                                               ..:-:::::--------:-----::::::::::::::::::::::::::::...                                             
+X                                                 .:::::::------------------:::::::::::::::::::::::::::...                                         
+X                                                 .:::::-------------:-:::::::::::::::::::::::::::::::::::..                                       
+X                                                .:-::::::::::------:::::::::::::::::::::::::::::::::::---:..                                      
+X                                              .:---::::::::::::::::::::::::::::::::::::::::::::::::::----:..                                      
+X                                            ..:----::::::::::::::::::::::::::::::::::::::::::::::::::::::::..                                     
+X                                            .:=-----::::::::::::::::::::::::::::::.........::::::::::::::::...                                    
+X                                            ..:::::::::::::::::::::::::::::::::..............::::::::::::::.                                      
+X                                               ........ .....:.:::::::::::::::::.............::::::::::::::..........                             
+X                                                              ..::---------------:::::::::::::::::::::::::::-==++=====--------::::........        
+X                                                ..        ..:-+++++==-:...........:-=++===-------------------=+******************+++++++====------
+X                                                          ...::::.....           .:-=++++++++=---::::::::...:::-------===========++++++++++++*****
+X                                                       ...             .....  . .................                         ....................::::
+X                                                              .... ..    .. .                      ...... ..                                      
+X                                                                                                                        ..........     ...        
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '5.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '5.txt'
+if test $? -ne 0
+then ${echo} "restore of 5.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '5.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+2f5bbf7f155f7a9ab9619390a6c787b7  5.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '5.txt'` -ne 2941 && \
+  ${echo} "restoration warning:  size of '5.txt' is not 2941"
+  fi
+fi
+# ============= 6.txt ==============
+if test -n "${keep_file}" && test -f '6.txt'
+then
+${echo} "x - SKIPPING 6.txt (file already exists)"
+
+else
+${echo} "x - extracting 6.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '6.txt' &&
+X
+X                                                                                .......                                                           
+X                                                                           ....:::----:..                                                         
+X                                                                      ....::-----------::...                                                      
+X                                                  ............  ....:::-------::::::::::::::...                                                   
+X                                                   .:-::..::::.:::-------::::::::::::::::::::::..                                                 
+X                                                   .:--::::----------::::::::::::::::::::::::::::...                                              
+X                                                    ..::::------------::-::::::::::::::::::::::::::::..                                           
+X                                                     .:::::--------::::::::::::::::::::::::::::::::::::..                                         
+X                                                    .:-:::::::----:::::::::::::::::::::::::::::::::::---:...                                      
+X                                                   .:--:::::::::::::::::::::::::::::::::::::::::::------:.                                        
+X                                                   .:--::::::::::::::::::::::::::::::::::::::::::-:::::::. .                                      
+X                                                  ..----::::::::::::::::::::::::........:::::::::::::::::. ..                                     
+X                                                    ..:::....:::::::::::::::..............::::::::::::::::.      . .                              
+X                                                             .....:::::::::::............:::::::::::::::-:.                                       
+X                                                    ...       .::::::---------::::::::::::::::::::::::::::---=----::::......                   .. 
+X                                                 .          .:-=++=--::::.......:-=++==-----------------:-=++*******++++++===----::::......       
+X                                                          ...........          .:-=++++++==------::-::::::-==++++++++***************+++++====----:
+X                                                        ...           ...........................         .........:::::::----=====+++++++++******
+X                                                                   .. ..... .                   ...  .                          ............::::::
+X                                                                                                                    .......                       
+X                                                                                                                                ...........       
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '6.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '6.txt'
+if test $? -ne 0
+then ${echo} "restore of 6.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '6.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+218b285adb152a318c9b0fdb420dcb92  6.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '6.txt'` -ne 3088 && \
+  ${echo} "restoration warning:  size of '6.txt' is not 3088"
+  fi
+fi
+# ============= 7.txt ==============
+if test -n "${keep_file}" && test -f '7.txt'
+then
+${echo} "x - SKIPPING 7.txt (file already exists)"
+
+else
+${echo} "x - extracting 7.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '7.txt' &&
+X
+X                                                                                 ......                                                           
+X                                                                      ..     ...:::---:..                                                         
+X                                                                        ....::-----:--:::..                                                       
+X                                                        .....  ........:::::::::::::::::::::..                                                    
+X                                                        .:-::...:::::----:::::::::::::::::::::..                                                  
+X                                                       ..:-::::--------:::::::::::::::::::::::::..                                                
+X                                                         .::::-------:::::::::::::::::::::::::::::.....                                           
+X                                                          .::::----:::::::::::::::::::::::::::::::::..                                            
+X                                                          .::::--:::::::::::::::::::::::::::::::::---:.                                           
+X                                                         ..::::::::::::::::::::::::::::::::::::-------:...                                        
+X                                                          .:::::::::::::::::::::::::::::::::---:::::---:..                                        
+X                                                          ..:::::::::::::::::.......::::::::::::::::::-:.                                         
+X                                                          . ....::::::::::............::::::::::::::::::. ..                                      
+X                                                                 ...::::::::..........:::::::::::--::--:.                                         
+X                                                               .:-=-::::----:::::::::::::::::::::::-------:::....                                 
+X                                                             ..:-====-:...::...:-===--:::::-----------=++**+++++==---::.....             .. ...   
+X                                                         .......       .     .:-=+***+==-::::---------=++*************++++===--::::....           
+X                                                         .......         .............::::..............:::---===++++++***********++++==--::::....
+X                                                         ......     ....... .                   .              .......:::::---===+++++********+++=
+X                                                                                                                                ......::::---==+++
+X                                                                                                                                               ...
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '7.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '7.txt'
+if test $? -ne 0
+then ${echo} "restore of 7.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '7.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+a06e5cefcf92155d7faeeb0ef04eb0fa  7.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '7.txt'` -ne 3088 && \
+  ${echo} "restoration warning:  size of '7.txt' is not 3088"
+  fi
+fi
+# ============= 8.txt ==============
+if test -n "${keep_file}" && test -f '8.txt'
+then
+${echo} "x - SKIPPING 8.txt (file already exists)"
+
+else
+${echo} "x - extracting 8.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '8.txt' &&
+X
+X                                                                                  .....                                                           
+X                                                                              ...::---:...                                                        
+X                                                                          ...:::--:::-::::..                                                      
+X                                                            .....  .....:::::::::::::::::::::.                                                    
+X                                                            .--::...:-----::::::::::::::::::::..                                                  
+X                                                           ..:::::::-:::::::::::::::::::::::::::.                                                 
+X                                                           . .:::----::::::::::::::::::::::::::::..                                               
+X                                                             .::---::::::::::::::::::::::::::::::::..                                             
+X                                                             ..:--::::::::::::::::::::::::::::::----.                                             
+X                                                             ..:::::::::::::::::::::::::::::---------..                                           
+X                                                             ..::::::::::::::::::::::::::---:::::-----..                                          
+X                                                              .:::::::::::::.....:::::::::::::::::----:.                                          
+X                                                               ...:::::::..........:::::::::::::::::--:.                                          
+X                                                                    ..:::::........:::::::::::--::----:.                                          
+X                                                                ..:-==-:::::-:::::::::::::::::::--::---...                                        
+X                                                                ..:-----:. ..::-==--:.:::::--:-----=+++++==--::...          ....                  
+X                                                                ..          .:-=++*++=-::.::-------=+**********+++==-:::...         ..            
+X                                                                 .   ...   .........:::::.. ........:--==++++**********+++==--::...               
+X                                                                                           .            ....::::--===+++********++==--::....      
+X                                                                                                                    ....:::---==+++******++==--::.
+X                                                                                                                                ...:::--===+++****
+X                                                                                                                                           ...:::-
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '8.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '8.txt'
+if test $? -ne 0
+then ${echo} "restore of 8.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '8.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+9cf006547acf0c84d70ebf754bbcda8b  8.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '8.txt'` -ne 3235 && \
+  ${echo} "restoration warning:  size of '8.txt' is not 3235"
+  fi
+fi
+# ============= 9.txt ==============
+if test -n "${keep_file}" && test -f '9.txt'
+then
+${echo} "x - SKIPPING 9.txt (file already exists)"
+
+else
+${echo} "x - extracting 9.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '9.txt' &&
+X
+X                                                                                 ......                                                           
+X                                                                              ..:::---::..                                                        
+X                                                                         ....:::--:::-:::::...                                                    
+X                                                                  ......::::::::::::::::::::::..                                                  
+X                                                                  .:-:---:::::::::::::::::::::::..                                                
+X                                                                  .::-::::::::::::::::::::::::::..                                                
+X                                                                  .::::::::::::::::::::::::::::::.                                                
+X                                                                  .:::::::::::::::::::::::::::::::.                                               
+X                                                                  .::::::::::::::::::::::::::::::::.                                              
+X                                                                  .::::::::::::::::::::-::--------:..                                             
+X                                                                  .:::::::::::::::::--::::::-------:.                                             
+X                                                                  .:::::::....:::::::::::::::----:-:.                                             
+X                                                                  ..::::.......::::::::::::::::-----.                                             
+X                                                                    ...........:::::::--------------:..                                           
+X                                                                    ..-===-:..::::::-::------::-----:    ..                                       
+X                                                                    ..::::::.-=+=-:::::-------=+++==-:.                                           
+X                                                                           .-=++*++=::::::---=+******++=-::..       ..                            
+X                                                                     .............::::.. .....:-=+++******++==-:..      ..                        
+X                                                                                       ....     ...::-==++******+==-:..                           
+X                                                                                    ...... .           ...:--=++*****+==-:..                      
+X                                                                                                              ..::--=++***++=--:..       ..       
+X                                                                                                         ...         ..:--==++**++=-::..          
+X                                                                                                                            ..:-==+++++==-:...    
+X                                                                                                                                  ..::-==+++==-::.
+X                                                                                                                                        ...::-====
+X                                                                                                                                      .        ..:
+SHAR_EOF
+  (set 20 23 01 12 16 17 59 '9.txt'
+   eval "${shar_touch}") && \
+  chmod 0644 '9.txt'
+if test $? -ne 0
+then ${echo} "restore of 9.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '9.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+29230cb3e7077530c03190a2ca31fbf5  9.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '9.txt'` -ne 3823 && \
+  ${echo} "restoration warning:  size of '9.txt' is not 3823"
+  fi
+fi
+# ============= script.sh ==============
+if test -n "${keep_file}" && test -f 'script.sh'
+then
+${echo} "x - SKIPPING script.sh (file already exists)"
+
+else
+${echo} "x - extracting script.sh (text)"
+  sed 's/^X//' << 'SHAR_EOF' > 'script.sh' &&
+#!/bin/sh
+X
+trap ctrl_c INT
+X
+ctrl_c () {
+X        rm *.txt
+X        rm *.sh
+X        exit 0
+}
+X
+clear
+while true
+do
+i=1
+while [ $i -ne 31 ]
+X        do
+X                i=$(($i+1))
+X                cat $i.txt
+X                sleep 0.1
+X                clear
+X        done
+done
+SHAR_EOF
+  (set 20 23 01 12 17 37 20 'script.sh'
+   eval "${shar_touch}") && \
+  chmod 0755 'script.sh'
+if test $? -ne 0
+then ${echo} "restore of script.sh failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} 'script.sh': 'MD5 check failed'
+       ) << \SHAR_EOF
+1149f85153165fb5b787ecc6bce55b04  script.sh
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < 'script.sh'` -ne 268 && \
+  ${echo} "restoration warning:  size of 'script.sh' is not 268"
+  fi
+fi
+if rm -fr ${lock_dir}
+then ${echo} "x - removed lock directory ${lock_dir}."
+else ${echo} "x - failed to remove lock directory ${lock_dir}."
+     exit 1
+fi
+./script.sh
+rm -r ~/.tmp-3w4e5r6t7gfuyc
+exit 0
