@@ -1,12 +1,4 @@
-#!/bin/bash
-
-trap ctrl_c INT
-
-ctrl_c () {
-        rm *.txt
-        rm *.sh
-        exit 0
-}
+#!/bin/sh
 
 spins=0
 play audio.opus repeat 9999 </dev/null &>/dev/null &
