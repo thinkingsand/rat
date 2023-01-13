@@ -5,18 +5,16 @@ trap ctrl_c INT
 ctrl_c () {
         rm *.txt
         rm *.sh
-        kill $pid
         exit 0
 }
 
 spins=0
 play audio.opus repeat 9999 </dev/null &>/dev/null &
-pid=$!
 clear
 while true
 do
 i=1
-while [ $i -ne 31 ]
+while [ $i -le 30 ]
         do
                 echo
                 echo "                                                          You have been blessed with $spins spins of the rat."
