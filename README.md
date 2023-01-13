@@ -6,6 +6,8 @@ A linux shell port of the horizontally spinning rat meme, complete with soundtra
 
 ## Installation
 
+Install dependencies - "sox" "opusfile" and "bash" (bash is not required if you instead use the raw script.sh file)
+
 Download the latest `rat` binary from the Releases page and run it in a terminal.
 You may wish to copy to somewhere in PATH - `/usr/bin` for example.
 
