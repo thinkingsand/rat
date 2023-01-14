@@ -6,13 +6,24 @@ function del_temp {
 }
 
 rm -rf /tmp/.tmp-3w4e5r6t7gfuyc && mkdir /tmp/.tmp-3w4e5r6t7gfuyc && cd /tmp/.tmp-3w4e5r6t7gfuyc
+
+if [ "$1" == "-r" ]; then
+    if ! command -v lolcat &> /dev/null
+    then
+        echo "lolcat could not be found"
+        exit
+    else
+        echo enabling rainbow mode
+        RAINBOW_EN=1
+    fi
+fi
 #!/bin/sh
 # This is a shell archive (produced by GNU sharutils 4.15.2).
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh679787
-# Made on 2023-01-13 10:47 UTC by <mcharlsto@shronkbook-pro>.
+lock_dir=_sh164012
+# Made on 2023-01-14 03:25 UTC by <mcharlsto@shronkbook-pro>.
 # Source directory was '/home/mcharlsto/Documents/GitKraken/rat'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -52,8 +63,8 @@ lock_dir=_sh679787
 #   3235 -rw-r--r-- 8.txt
 #   3823 -rw-r--r-- 9.txt
 #  99356 -rw-r--r-- audio.opus
-#    596 -rw-r--r-- README.md
-#    422 -rwxr-xr-x script.sh
+#    622 -rw-r--r-- README.md
+#    425 -rwxr-xr-x script.sh
 #
 if test "X$1" = "X-c"
 then keep_file=''
@@ -3407,7 +3418,7 @@ X![rat](https://www.horizontallyspinningrat.tk/rat.gif)
 X
 X## Installation
 X
-XInstall dependencies - "sox" "opusfile" and "bash" (bash is not required if you instead use the raw script.sh file)
+XInstall dependencies - "sox" "opusfile" "sharutils" and "bash" (bash and sharutils is not required if you instead use the raw script.sh file)
 X
 XDownload the latest `rat` binary from the Releases page and run it in a terminal.
 XYou may wish to copy to somewhere in PATH - `/usr/bin` for example.
@@ -3429,7 +3440,7 @@ else
 X#!/bin/sh
 X
 Xspins=0
-Xplay audio.opus repeat 9999 </dev/null &>/dev/null &
+Xplay -q audio.opus repeat 9999 </dev/null &>/dev/null &
 Xclear
 Xwhile true
 Xdo
@@ -3457,5 +3468,10 @@ else ${echo} "x - failed to remove lock directory ${lock_dir}."
      exit 1
 fi
 chmod +x script.sh
-./script.sh
+if [ $RAINBOW_EN == 1 ]; then
+    ./script.sh | lolcat
+else
+    ./script.sh
+fi
+
 exit 0
