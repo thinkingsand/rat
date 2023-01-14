@@ -1,7 +1,7 @@
 #!/bin/sh
 
 spins=0
-play audio.opus repeat 9999 </dev/null &>/dev/null &
+play -q audio.opus repeat 9999 </dev/null &>/dev/null &
 clear
 while true
 do
