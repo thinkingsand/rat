@@ -3,12 +3,14 @@
 function startup {
     printf '\e[?25l'    # hide cursor
     printf '\e[?7l'     # disable line wrap
+    stty -echo          # hide user input
     clear
     play -q audio.opus repeat 9999999 </dev/null &>/dev/null & # play audio
 }
 function wrapup {
     printf '\e[?25h'    # show cursor
     printf '\e[?7h'     # enable line wrap
+    stty echo           # show user input
     clear
 }
 trap wrapup EXIT;
