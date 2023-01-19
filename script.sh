@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function startup {
+    printf '\e[?1049h'  # save user's current terminal (XTerm specific)
     printf '\e[?25l'    # hide cursor
     printf '\e[?7l'     # disable line wrap
     stty -echo          # hide user input
@@ -8,10 +9,12 @@ function startup {
     play -q audio.opus repeat 9999999 </dev/null &>/dev/null & # play audio
 }
 function wrapup {
+    clear
     printf '\e[?25h'    # show cursor
     printf '\e[?7h'     # enable line wrap
     stty echo           # show user input
-    clear
+    printf '\e[?1049l'  # restore user's terminal (if successfully saved previously)
+    printf '\e[A'       # move cursor up one line
 }
 trap wrapup EXIT;
 
