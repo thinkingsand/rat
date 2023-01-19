@@ -10,11 +10,11 @@ function startup {
 }
 function wrapup {
     clear
-    printf '\e[?25h'    # show cursor
     printf '\e[?7h'     # enable line wrap
     stty echo           # show user input
     printf '\e[?1049l'  # restore user's terminal (if successfully saved previously)
     printf '\e[A'       # move cursor up one line
+    printf '\e[?25h'    # show cursor
 }
 trap wrapup EXIT;
 
