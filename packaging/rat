@@ -17,6 +17,12 @@ if [ "$1" == "-r" ]; then
         RAINBOW_EN=1
     fi
 fi
+
+if [ "$1" == "-h" ]; then
+  echo "-h, Help"
+  echo "-r, Rainbow Rat"
+  exit 
+fi
 #!/bin/sh
 # This is a shell archive (produced by GNU sharutils 4.15.2).
 # To extract the files from this archive, save it to some FILE, remove
