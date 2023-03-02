@@ -17,3 +17,9 @@ if [ "$1" == "-r" ]; then
         RAINBOW_EN=1
     fi
 fi
+
+if [ "$1" == "-h" ]; then
+  echo "-h, Help"
+  echo "-r, Rainbow Rat"
+  exit 
+fi
