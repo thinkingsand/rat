@@ -6,9 +6,11 @@ A linux shell port of the horizontally spinning rat meme, complete with soundtra
 
 ## Installation
 
-Install dependencies - "sox" "opusfile" "sharutils" and "bash" (bash and sharutils is not required if you instead use the raw script.sh file)
+Install dependencies - "sox" "opusfile" "sharutils" and "bash" (sharutils is not required if you instead use the raw script.sh file)
 
 Download the latest `rat` binary from the Releases page and run it in a terminal.
 You may wish to copy to somewhere in PATH - `/usr/bin` for example.
 
 A package is also available on the [AUR](https://aur.archlinux.org/packages/horizontallyspinningrat)
+
+A massive thanks to dylanaraps and his ![excellent guide](https://github.com/dylanaraps/writing-a-tui-in-bash) on implementing TUI features within Bash.
