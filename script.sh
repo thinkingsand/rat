@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function startup {
     printf '\e[?1049h'  # save user's current terminal (XTerm specific)
