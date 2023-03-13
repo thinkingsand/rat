@@ -28,9 +28,9 @@ fi
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh25227
-# Made on 2023-01-16 23:39 UTC by <mcharlsto@shronkbook-pro>.
-# Source directory was '/home/mcharlsto/Documents/GitKraken/rat'.
+lock_dir=_sh16576
+# Made on 2023-03-02 10:45 UTC by <nic@Device>.
+# Source directory was '/home/nic/Documents/code/Projects/rat'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
 #
