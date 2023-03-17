@@ -13,4 +13,4 @@ You may wish to copy to somewhere in PATH - `/usr/bin` for example.
 
 A package is also available on the [AUR](https://aur.archlinux.org/packages/horizontallyspinningrat)
 
-A massive thanks to dylanaraps and his ![excellent guide](https://github.com/dylanaraps/writing-a-tui-in-bash) on implementing TUI features within Bash.
+A massive thanks to dylanaraps and his [excellent guide](https://github.com/dylanaraps/writing-a-tui-in-bash) on implementing TUI features within Bash.
