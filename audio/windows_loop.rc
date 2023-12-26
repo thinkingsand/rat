@@ -1,0 +1,4 @@
+#include <windows.h>
+#define IDC_STATIC -1
+
+loop WAVE "loop.wav"
