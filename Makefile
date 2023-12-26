@@ -1,17 +1,17 @@
 win: rat.c bin
-	gcc rat.c -o .\bin\rat.exe -Os
+	${CC} rat.c -o .\bin\rat.exe -Os
 
 win_audio: rat.c loop bin
-	gcc -DAUDIO_EN rat.c .\bin\windows_loop.o -o .\bin\rat.exe -lwinmm
+	${CC} -DAUDIO_EN rat.c .\bin\windows_loop.o -o .\bin\rat.exe -lwinmm
 
 loop:
 	windres -i .\audio\windows_loop.rc -o .\bin\windows_loop.o
 
 linux: rat.c bin
-	gcc rat.c -o bin/rat
+	${CC} rat.c -o bin/rat
 
 linux_audio: rat.c linux_loop bin
-	gcc -DAUDIO_EN rat.c audio/linux_audio.c -o bin/rat -lm -lpthread
+	${CC} -DAUDIO_EN rat.c audio/linux_audio.c -o bin/rat -lm -lpthread
 	
 linux_loop:
 	xxd -i audio/loop.wav > audio/linux_loop.h
