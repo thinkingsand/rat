@@ -33,7 +33,7 @@ void print_help() {
     printf("  -h, --help        Display this help menu\n");
 }
 
-void print_debug(clock_t start) {
+void print_debug() {
     if(debug_flag) {
         if(rainbow_flag) {
             printf("Rainbow enabled\n");
@@ -45,8 +45,6 @@ void print_debug(clock_t start) {
             printf("Framerate unlock enabled\n");
         }
         printf("Loop count: %d\n", loop_count);
-        int time_taken = (int)((double)(clock() - start) / CLOCKS_PER_SEC * 1000);
-        printf("Running for: %dms\n", time_taken);
     }
 }
 
@@ -139,7 +137,7 @@ int main(int argc, char **argv)
     #endif
 
     for(int i = 0; i == i; i++) {
-        print_debug(start);
+        print_debug();
 
         printf("\n                                                         You have been blessed with %d spins of the rat.\n", loop_count);
         printf(frames[i]);
