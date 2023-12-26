@@ -25,7 +25,7 @@ int opt, rainbow_flag, ratmark_flag, unlock_flag, debug_flag, loop_count;
 void print_help() {
     printf("Usage: rat [OPTIONS]\n");
     printf("Options:\n");
-    printf("  -r, --rainbow     Enable rainbow\n");
+    printf("  -r, --rainbow     Enable rainbow mode\n");
     printf("  -m, --ratmark     Enable ratmark\n");
     printf("                    depends - lolcat\n");
     printf("  -u, --unlock      Enable framerate unlock\n");
