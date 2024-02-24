@@ -28,7 +28,7 @@ void *linux_audioplay()
     result = ma_decoder_init_memory(&audio_loop_wav, sizeof(audio_loop_wav), NULL, &decoder);
     if (result != MA_SUCCESS) {
         printf("Failed to open file.\n");
-        return;
+        return NULL;
     }
 
     ma_data_source_set_looping(&decoder, MA_TRUE);

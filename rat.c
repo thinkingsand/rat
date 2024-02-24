@@ -140,7 +140,8 @@ int main(int argc, char **argv)
         print_debug();
 
         printf("\n                                                         You have been blessed with %d spins of the rat.\n", loop_count);
-        printf(frames[i]);
+        
+        fputs(frames[i], stdout);
 
         if (!unlock_flag) {
             port_sleep(delay_time);
