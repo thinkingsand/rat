@@ -16,13 +16,20 @@ linux_audio: rat.c linux_loop bin
 linux_loop:
 	xxd -i audio/loop.wav > audio/linux_loop.h
 
-deb:
+deb: rat.c bin rat_1.0-1
 	${CC} rat.c -o bin/rat -g
 	mkdir -p rat_1.0-1/usr/bin
 	mkdir -p rat_1.0-1/DEBIAN
 	cp bin/rat rat_1.0-1/usr/bin
 	cp debian/control rat_1.0-1/DEBIAN
 	dpkg-deb --build rat_1.0-1
+
+rpm: rat.c bin rat-1.0
+	${CC} rat.c -o bin/rat -g
+	mkdir -p rat-1.0/usr/bin
+	cp bin/rat rat-1.0/usr/bin
+	cp rpm/control rat-1.0/DEBIAN
+	rpm -b rat-1.0
 
 dos:
 	wcl386 rat.c -za99 -d1 -l=dos4g -fe=rat_dos.exe

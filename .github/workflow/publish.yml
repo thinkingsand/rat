@@ -1,0 +1,82 @@
+name: Build and Publish .deb Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install build dependencies
+      run: sudo apt-get update && sudo apt-get install -y dpkg-dev debhelper build-essential
+
+    - name: Get the number of commits
+      id: commits
+      run: echo "COMMIT_COUNT=$(git rev-list --count HEAD)" >> $GITHUB_ENV
+
+    - name: Compile the binary
+      run: gcc -o rat rat.c
+
+    - name: Create debian directory structure
+      run: |
+        mkdir -p build/DEBIAN
+        mkdir -p build/usr/local/bin
+        cp rat build/usr/local/bin/
+        
+        cat <<EOF > build/DEBIAN/control
+        Package: rat
+        Version: 1.0-${{ env.COMMIT_COUNT }}
+        Section: base
+        Priority: optional
+        Architecture: amd64
+        Depends: libc6 (>= 2.2.5)
+        Maintainer: thinkingsand
+        Description: rat
+        EOF
+
+    - name: Build the .deb package
+      run: dpkg-deb --build build
+
+    - name: Upload .deb package
+      uses: actions/upload-artifact@v2
+      with:
+        name: rat-deb-package
+        path: build.deb
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download .deb package
+      uses: actions/download-artifact@v2
+      with:
+        name: rat-deb-package
+        path: .
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: "v1.0-${{ env.COMMIT_COUNT }}"
+        release_name: Release v1.0-${{ env.COMMIT_COUNT }}
+        draft: false
+        prerelease: false
+
+    - name: Upload .deb to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: 'build.deb'
+        asset_name: 'rat_1.0-${{ env.COMMIT_COUNT }}.deb'
+        asset_content_type: 'application/x-debian-package'

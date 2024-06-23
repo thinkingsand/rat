@@ -1,7 +1,0 @@
-Package: rat
-Version: 1.0-1
-Section: base
-Priority: optional
-Architecture: x86_64
-Maintainer: thinkingsand <2265483+thinkingsand@users.noreply.github.com>
-Description: rat
