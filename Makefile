@@ -18,9 +18,9 @@ linux_loop:
 
 deb:
 	${CC} rat.c -o bin/rat -g
-	mkdir -p rat_1.0-1/usr/bin
+	mkdir -p rat_1.0-1/usr/local/bin
 	mkdir -p rat_1.0-1/DEBIAN
-	cp bin/rat rat_1.0-1/usr/bin
+	cp bin/rat rat_1.0-1/usr/local/bin
 	cp debian/control rat_1.0-1/DEBIAN
 	dpkg-deb --build rat_1.0-1
 
