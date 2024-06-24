@@ -105,38 +105,46 @@ jobs:
       contents: write
 
     steps:
-    - name: Download .deb package
-      uses: actions/download-artifact@v2
-      with:
-        name: rat-deb-package
-        path: .
-    - name: Create GitHub Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: "v1.0-${{ env.COMMIT_COUNT }}"
-        release_name: Release v1.0-${{ env.COMMIT_COUNT }}
-        draft: false
-        prerelease: false
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Get the number of commits
+        id: commits
+        run: echo "COMMIT_COUNT=$(git rev-list --count HEAD)" >> $GITHUB_ENV
+      - name: Download .deb package
+        uses: actions/download-artifact@v2
+        with:
+          name: rat-deb-package
+          path: .
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v1.0-${{ env.COMMIT_COUNT }}"
+          release_name: Release v1.0-${{ env.COMMIT_COUNT }}
+          draft: false
+          prerelease: false
 
-    - name: Upload .deb to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: 'build.deb'
-        asset_name: 'rat_1.0-${{ env.COMMIT_COUNT }}.deb'
-        asset_content_type: 'application/x-debian-package'
-    
-    - name: Upload .rpm to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: 'rpm/RPMS/x86_64/*.rpm'
-        asset_name: 'rat-1.0-${{ env.commit_count }}.rpm'
-        asset_content_type: 'application/x-rpm'
+      - name: Upload .deb to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'build.deb'
+          asset_name: 'rat_1.0-${{ env.COMMIT_COUNT }}.deb'
+          asset_content_type: 'application/x-debian-package'
+      
+      - name: Upload .rpm to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'rpm/RPMS/x86_64/*.rpm'
+          asset_name: 'rat-1.0-${{ env.commit_count }}.rpm'
+          asset_content_type: 'application/x-rpm'
