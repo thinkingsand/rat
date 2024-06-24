@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: rat-binary
-        path: rat.x86_64
+        path: rat
 
     - name: Create debian directory structure
       run: |
@@ -191,8 +191,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: 'rat.x86_64'
-          asset_name: 'rat.x86_64'
+          asset_path: 'rat'
+          asset_name: 'rat'
           asset_content_type: 'application/octet-stream'
 
       - name: Upload exe to Release
