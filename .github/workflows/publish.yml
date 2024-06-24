@@ -110,18 +110,17 @@ jobs:
       contents: write
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - uses: msys2/setup-msys2@v2
       with:
         update: true
         install: >-
-          make
-          git
           mingw-w64-ucrt-x86_64-gcc
-    - name: Checkout code
-      uses: actions/checkout@v4
 
     - name: Compile the binary
-      run: make win
+      run: cc rat.c -o .\bin\rat.exe -Os
     
     - name: Upload exe
       uses: actions/upload-artifact@v4
