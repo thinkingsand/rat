@@ -106,8 +106,9 @@ jobs:
 
   build-windows:
     runs-on: windows-latest
-    permissions:
-      contents: write
+    defaults:
+      run:
+        shell: msys2 {0}
 
     steps:
     - name: Checkout code
@@ -115,12 +116,13 @@ jobs:
 
     - uses: msys2/setup-msys2@v2
       with:
+        location: C:/
         update: true
+        msystem: UCRT64
         install: >-
           mingw-w64-ucrt-x86_64-gcc
 
     - name: Compile the binary
-      shell: msys2 {0}
       run: gcc rat.c -o .\bin\rat.exe -Os
     
     - name: Upload exe
