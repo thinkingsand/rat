@@ -8,10 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    
+    - name: Create tag
+      run: |
+        git tag v1.0-${{ env.COMMIT_COUNT }}
+        git push origin v1.0-${{ env.COMMIT_COUNT }}
 
     - name: Install build dependencies
       run: sudo apt-get update && sudo apt-get install -y dpkg-dev debhelper build-essential
@@ -97,13 +104,6 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Create tag
-      run: |
-        git tag v1.0-${{ env.COMMIT_COUNT }}
-        git push origin v1.0-${{ env.COMMIT_COUNT }}
     - name: Download .deb package
       uses: actions/download-artifact@v2
       with:
