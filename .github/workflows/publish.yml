@@ -116,9 +116,8 @@ jobs:
 
     - uses: msys2/setup-msys2@v2
       with:
-        location: C:/
-        update: true
         msystem: UCRT64
+        pacboy: cc:p
         install: >-
           mingw-w64-ucrt-x86_64-gcc
 
