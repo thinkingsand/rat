@@ -120,6 +120,7 @@ jobs:
           mingw-w64-ucrt-x86_64-gcc
 
     - name: Compile the binary
+      shell: msys2 {0}
       run: cc rat.c -o .\bin\rat.exe -Os
     
     - name: Upload exe
