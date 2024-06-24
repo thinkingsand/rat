@@ -123,14 +123,13 @@ jobs:
 
     - name: Compile the binary
       run: |
-        gcc rat.c -o bin\rat.exe -Os
-        ls -l $(pwd) bin
+        gcc rat.c -o rat.exe -Os
     
     - name: Upload exe
       uses: actions/upload-artifact@v4
       with:
         name: rat-exe
-        path: bin\rat.exe
+        path: rat.exe
 
   release:
     needs: [build-linux, build-windows]
