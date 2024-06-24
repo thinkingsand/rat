@@ -150,6 +150,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: 'rpm/RPMS/x86_64/*.rpm'
-          asset_name: 'rat-1.0-${{ env.commit_count }}.rpm'
+          asset_path: 'rat-*.x86_64.rpm'
+          asset_name: 'rat-1.0-${{ env.COMMIT_COUNT }}.rpm'
           asset_content_type: 'application/x-rpm'
