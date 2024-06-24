@@ -1,0 +1,155 @@
+name: Build and Publish Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        ref: main
+    - name: Get the number of commits
+      id: commits
+      run: echo "COMMIT_COUNT=$(git rev-list --count HEAD)" >> $GITHUB_ENV
+    - name: Create tag
+      run: |
+        git tag v1.0-${{ env.COMMIT_COUNT }}
+        git push origin v1.0-${{ env.COMMIT_COUNT }}
+
+    - name: Install build dependencies
+      run: sudo apt-get update && sudo apt-get install -y dpkg-dev debhelper build-essential
+
+    - name: Compile the binary
+      run: gcc -o rat rat.c
+
+    - name: Create debian directory structure
+      run: |
+        mkdir -p build/DEBIAN
+        mkdir -p build/usr/local/bin
+        cp rat build/usr/local/bin/
+        
+        cat <<EOF > build/DEBIAN/control
+        Package: rat
+        Version: 1.0-${{ env.COMMIT_COUNT }}
+        Section: base
+        Priority: optional
+        Architecture: amd64
+        Depends: libc6 (>= 2.2.5)
+        Maintainer: thinkingsand
+        Description: rat
+        EOF
+
+    - name: Build the .deb package
+      run: dpkg-deb --build build
+
+    - name: Upload .deb package
+      uses: actions/upload-artifact@v2
+      with:
+        name: rat-deb-package
+        path: build.deb
+
+    - name: Create RPM directory structure
+      run: |
+        mkdir -p rpm/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+        cp rat rpm/SOURCES/
+
+    - name: Create .spec file
+      run: |
+        cat <<EOF > rpm/SPECS/rat.spec
+        Name: rat
+        Version: 1.0
+        Release: ${{ env.COMMIT_COUNT }}
+        Summary: rat
+
+        License: GPL
+        Source: %{name}-%{version}.tar.gz
+
+        %description
+        rat
+
+        %prep
+
+        %build
+
+        %install
+        mkdir -p %{buildroot}/usr/local/bin
+        cp %{_sourcedir}/rat %{buildroot}/usr/local/bin/
+
+        %files
+        /usr/local/bin/rat
+
+    - name: Build the .rpm package
+      run: |
+        cd rpm
+        rpmbuild --define "_topdir $(pwd)" -bb SPECS/rat.spec
+
+    - name: Upload .rpm package
+      uses: actions/upload-artifact@v2
+      with:
+        name: rat-rpm-package
+        path: rpm/RPMS/x86_64/*.rpm
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Get the number of commits
+        id: commits
+        run: echo "COMMIT_COUNT=$(git rev-list --count HEAD)" >> $GITHUB_ENV
+      - name: Download .deb package
+        uses: actions/download-artifact@v2
+        with:
+          name: rat-deb-package
+          path: .
+      - name: Download .deb package
+        uses: actions/download-artifact@v2
+        with:
+          name: rat-rpm-package
+          path: .
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v1.0-${{ env.COMMIT_COUNT }}"
+          release_name: Release v1.0-${{ env.COMMIT_COUNT }}
+          draft: false
+          prerelease: false
+
+      - name: Upload .deb to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'build.deb'
+          asset_name: 'rat_1.0-${{ env.COMMIT_COUNT }}.deb'
+          asset_content_type: 'application/x-debian-package'
+      
+      - name: Upload .rpm to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'rat-1.0-${{ env.COMMIT_COUNT }}.x86_64.rpm'
+          asset_name: 'rat-1.0-${{ env.COMMIT_COUNT }}.rpm'
+          asset_content_type: 'application/x-rpm'
