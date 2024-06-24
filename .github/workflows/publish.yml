@@ -121,13 +121,13 @@ jobs:
 
     - name: Compile the binary
       shell: msys2 {0}
-      run: cc rat.c -o .\bin\rat.exe -Os
+      run: gcc rat.c -o .\bin\rat.exe -Os
     
     - name: Upload exe
       uses: actions/upload-artifact@v4
       with:
         name: rat-exe
-        path: bin\rat.exe
+        path: .\bin\rat.exe
 
   release:
     needs: [build-linux, build-windows]
