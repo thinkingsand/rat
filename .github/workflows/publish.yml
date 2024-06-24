@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install build dependencies
       run: sudo apt-get update && sudo apt-get install -y dpkg-dev debhelper build-essential
@@ -97,18 +97,18 @@ jobs:
       contents: write
 
     steps:
-    - name: Download .deb package
-      uses: actions/download-artifact@v2
-      with:
-        name: rat-deb-package
-        path: .
+    - name: Checkout code
+      uses: actions/checkout@v4
     
     - name: Create tag
       run: |
         git tag v1.0-${{ env.COMMIT_COUNT }}
         git push origin v1.0-${{ env.COMMIT_COUNT }}
-
-
+    - name: Download .deb package
+      uses: actions/download-artifact@v2
+      with:
+        name: rat-deb-package
+        path: .
     - name: Create GitHub Release
       id: create_release
       uses: actions/create-release@v1
