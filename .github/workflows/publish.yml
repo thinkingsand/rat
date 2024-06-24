@@ -122,13 +122,15 @@ jobs:
           mingw-w64-ucrt-x86_64-gcc
 
     - name: Compile the binary
-      run: gcc rat.c -o .\bin\rat.exe -Os
+      run: |
+        gcc rat.c -o bin\rat.exe -Os
+        ls -l $(pwd) bin
     
     - name: Upload exe
       uses: actions/upload-artifact@v4
       with:
         name: rat-exe
-        path: .\bin\rat.exe
+        path: bin\rat.exe
 
   release:
     needs: [build-linux, build-windows]
@@ -154,6 +156,16 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: rat-rpm-package
+          path: .
+      - name: Download .deb package
+        uses: actions/download-artifact@v4
+        with:
+          name: rat-binary
+          path: .
+      - name: Download .deb package
+        uses: actions/download-artifact@v4
+        with:
+          name: rat-exe
           path: .
       - name: Create GitHub Release
         id: create_release
