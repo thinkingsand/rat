@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-linux:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -30,6 +30,12 @@ jobs:
 
     - name: Compile the binary
       run: gcc -o rat rat.c
+    
+    - name: Upload binary
+      uses: actions/upload-artifact@v4
+      with:
+        name: rat-binary
+        path: rat.x86_64
 
     - name: Create debian directory structure
       run: |
@@ -52,7 +58,7 @@ jobs:
       run: dpkg-deb --build build
 
     - name: Upload .deb package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: rat-deb-package
         path: build.deb
@@ -93,13 +99,38 @@ jobs:
         rpmbuild --define "_topdir $(pwd)" -bb SPECS/rat.spec
 
     - name: Upload .rpm package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: rat-rpm-package
         path: rpm/RPMS/x86_64/*.rpm
 
+  build-windows:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        install: >-
+          make
+          git
+          mingw-w64-ucrt-x86_64-gcc
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Compile the binary
+      run: make win
+    
+    - name: Upload exe
+      uses: actions/upload-artifact@v4
+      with:
+        name: rat-exe
+        path: bin\rat.exe
+
   release:
-    needs: build
+    needs: [build-linux, build-windows]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -114,12 +145,12 @@ jobs:
         id: commits
         run: echo "COMMIT_COUNT=$(git rev-list --count HEAD)" >> $GITHUB_ENV
       - name: Download .deb package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: rat-deb-package
           path: .
       - name: Download .deb package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: rat-rpm-package
           path: .
@@ -153,3 +184,23 @@ jobs:
           asset_path: 'rat-1.0-${{ env.COMMIT_COUNT }}.x86_64.rpm'
           asset_name: 'rat-1.0-${{ env.COMMIT_COUNT }}.rpm'
           asset_content_type: 'application/x-rpm'
+      
+      - name: Upload binary to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'rat.x86_64'
+          asset_name: 'rat.x86_64'
+          asset_content_type: 'application/octet-stream'
+
+      - name: Upload exe to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'rat.exe'
+          asset_name: 'rat.exe'
+          asset_content_type: 'application/vnd.microsoft.portable-executable'
