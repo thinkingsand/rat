@@ -1,7 +1,7 @@
 win: rat.c bin
 	${CC} rat.c -o .\bin\rat.exe -Os
 
-win_audio: rat.c loop bin
+win_audio: rat.c bin loop
 	${CC} -DAUDIO_EN rat.c .\bin\windows_loop.o -o .\bin\rat.exe -lwinmm
 
 loop:
@@ -10,7 +10,7 @@ loop:
 linux: rat.c bin
 	${CC} rat.c -o bin/rat
 
-linux_audio: rat.c linux_loop bin
+linux_audio: rat.c bin linux_loop
 	${CC} -DAUDIO_EN rat.c audio/linux_audio.c -o bin/rat -lm -lpthread
 	
 linux_loop:

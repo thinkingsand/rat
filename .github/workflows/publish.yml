@@ -29,19 +29,19 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y dpkg-dev debhelper build-essential
 
     - name: Compile the binary
-      run: gcc -o rat rat.c
+      run: make linux_audio
     
     - name: Upload binary
       uses: actions/upload-artifact@v4
       with:
         name: rat-binary
-        path: rat
+        path: bin/rat
 
     - name: Create debian directory structure
       run: |
         mkdir -p build/DEBIAN
         mkdir -p build/usr/local/bin
-        cp rat build/usr/local/bin/
+        cp bin/rat build/usr/local/bin/
         
         cat <<EOF > build/DEBIAN/control
         Package: rat
@@ -66,7 +66,7 @@ jobs:
     - name: Create RPM directory structure
       run: |
         mkdir -p rpm/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
-        cp rat rpm/SOURCES/
+        cp bin/rat rpm/SOURCES/
 
     - name: Create .spec file
       run: |
@@ -120,16 +120,17 @@ jobs:
         pacboy: cc:p
         install: >-
           mingw-w64-ucrt-x86_64-gcc
+          make
 
     - name: Compile the binary
       run: |
-        gcc rat.c -o rat.exe -Os
+        make win_audio
     
     - name: Upload exe
       uses: actions/upload-artifact@v4
       with:
         name: rat-exe
-        path: rat.exe
+        path: bin/rat.exe
 
   release:
     needs: [build-linux, build-windows]
